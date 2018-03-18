@@ -4,10 +4,17 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+require('./app_api/models/db.js');    //adding this calls app_api/models/db.js and results in connection to databas
 
-var index = require('./app_server/routes/index'); //note: bb updated this though not asked to
-var users = require('./app_server/routes/users'); //note: bb updated according to pg 67
+
+var routes = require('./app_server/routes/index'); //note: bb updated this though not asked to
+var users = require('./app_server/routes/users'); //according to pg 67
 //var routes= require('./app_server/routes/users'); //note: bb added this. whole line was not here. seems to work without it
+
+var routesApi= require('./app_api/routes/index');  //added 3:19 to create routing for API call
+
+
+
 
 var app = express();
 
@@ -23,8 +30,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
+app.use('/', routes);
 app.use('/users', users);
+
+app.use('/api',routesApi);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
