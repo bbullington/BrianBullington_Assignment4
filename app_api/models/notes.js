@@ -2,15 +2,16 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var noteSchema = new Schema({
-    username: String,
-    password: String,
-    notes:{
-        title: String,
-        contents: String
+    Username: String,
+    Password: String,
+    Notes:{
+        Title: String,
+        Contents: String
     }
 });
 
-mongoose.model("Notes", noteSchema);  //note: on bears this was an export
+//mongoose.model("Notes", noteSchema);  //note: this is Ben's version
+module.exports=mongoose.model('Notes', noteSchema);
 
 
 

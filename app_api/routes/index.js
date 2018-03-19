@@ -1,15 +1,101 @@
 var express = require('express');
 var router= express.Router();
+var MongoClient= require('mongodb').MongoClient;
+var url= "mongodb://localhost:27017/noteDb";
 var ctrlNotes= require('../controllers/notes.js');
+var Note= require('../models/notes');
+var mongoose = require('mongoose');
 
 
-router.get('/api', function(req, res, next){
-    res.render('../app_server/views/index.jade', {title: 'Get /'});
-    console.log("hit the git");
+/* testing whether the get, post, put, and delete requests are getting through.
+Note: html requests to '/api' come here as '/'
+ */
 
-});
+// router.get('/', function(req, res, next){                //LocalHost3000 starting level of 'api/' comes across here just as '/'
+//     res.render('../views/index.jade', {title: 'Get /'});
+//     console.log("hitting /api ('/') the  with push");
+// });
 
 
+router.route('/')
+    .get(function(req, res, next){
+        MongoClient.connect(url, function(err, db) {
+            if (err) throw err;
+            var dbo = db.db("noteDb");
+            dbo.collection("noteCollection").findOne({}, function(err, result) {
+                if (err) throw err;
+                res.send(result);
+                db.close();
+           });
+
+        });
+    })
+
+
+
+//     .get(function(req, res){
+//         //res.json({message: 'you made it to the api again!'});
+//         Note.find(function(err, noteCollection){
+//             if(err)
+//                 res.send(err);
+//             res.json({message: 'you made it to the api again!'});
+// //            res.json(noteCollection);
+//
+//         });
+//     })
+
+    .post(function(req, res){
+        var newNote= new Note();
+        newNote.Username = req.body.name;
+        newNote.save(function(err){
+            if (err)
+                res.send(err);
+            res.json({message: "New note created"});
+        });
+
+
+//        res.json({message: 'you made it to the post again!'});
+
+    });
+
+module.exports = router;
+
+//
+//
+// router.get('/', function(req, res){
+//     res.json({message: 'you made it to the api!'});
+//
+// });
+//
+//
+// router.post('/', function(req, res, next){
+//     res.render('../views/index.jade', {title: 'Post'});
+//     console.log("hitting /api ('/') the  with post");
+// });
+//
+// router.put('/', function(req, res, next){
+//      res.render('../views/index.jade', {title: 'Put'});
+//      console.log("hitting /api ('/') the  with put");
+// });
+//
+// router.delete('/', function(req, res, next){
+//     res.render('../views/index.jade', {title: 'Delete'});
+//     console.log("hitting /api ('/') the  with delete");
+// });
+//
+//
+// router.get('/notes', function(req, res){
+//     res.json({message: 'you made it to the notesList!'});
+//
+// });
+
+
+
+
+
+// module.exports.newnote =function(req,res){
+//     res.render('newnote.jade', {title:'Note Editor'});  //.jade added for clarity. This sends for index.jade, giving it a variable for title
+// };
 
 
 
@@ -19,27 +105,27 @@ router.get('/api', function(req, res, next){
 
 
 //var ctrlBbnotes = require('../controllers/bbnotes.js');  //used for notes and newnote
-var ctrlBbnotes = require('../../app_server/controllers/bbnotes.js'); //placeholder
-var ctrlBbNotesLogin = require('../../app_server/controllers/bbnotesLogin');
+// var ctrlBbnotes = require('../../app_server/controllers/bbnotes.js'); //placeholder
+// var ctrlBbNotesLogin = require('../../app_server/controllers/bbnotesLogin');
 //var ctrlBbNotesLogin = require('../controllers/bbnotesLogin.js') //used for login
 //
 //
 //
 //
 // /*Locations pages*/      //routes to controllers/bbnotes.js when URL comes in
-router.get('/notes', ctrlBbnotes.notesList);
-router.get('/api', ctrlBbnotes.notesList);
-router.get('/newnote', ctrlBbnotes.newnote);
+// router.get('/notes', ctrlBbnotes.notesList);
+// router.get('/api', ctrlBbnotes.notesList);
+// router.get('/newnote', ctrlBbnotes.newnote);
 //
 //
 // /*Login Page */     //routes to controllers/bbnotesLogin.js when URL comes in
-router.get('/', ctrlBbNotesLogin.login);
+// router.get('/', ctrlBbNotesLogin.login);
+
 //
 //
 //
 //
-//
-module.exports = router;
+
 
 
 /* from GettingMean cpt 6 *******************/

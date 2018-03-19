@@ -1,8 +1,9 @@
 var express = require('express');
 var router = express.Router();
-
-
 var ctrlBbnotes = require('../controllers/bbnotes.js');  //used for notes and newnote
+
+
+
 var ctrlBbNotesLogin = require('../controllers/bbnotesLogin.js') //used for login
 
 
