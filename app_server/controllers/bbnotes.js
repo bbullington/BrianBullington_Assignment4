@@ -44,23 +44,32 @@ module.exports.notesListFromApi =function(req,res){
                 title: 'Your Note Library',
                 strapline: 'Fill the page!'
             },
-            storednotes: [
+            noteCollection: [
                 {
-                    title: 'That one time I drove fast',
-                    text: 'I felt the need, the need for speed. Unfortunately the cop felt the need, the need to ticket write. the rest, as they say, is history.',
-                    tags: ['Driving', 'Bad Choices Make Good Stories', 'Oops'],
-                    views: '54'
-                },{
-                    title: 'Lifting myself by my Bootstraps',
-                    text: 'Today I added bootstrap to my site. Wow. That is all I have to say. I think of all those poor teenagers making GeoCities sites and I wonder what they would think if they could see me now.',
-                    tags: ['learn for life', 'adult homework'],
-                    views: '2'
-                },{
-                    title: 'Soccer Life',
-                    text: 'There are some who say soccer is life. There are some who just say that sentence is redundant, i n the same way that saying Nick Cage is Nick Cage is redundant',
-                    tags: ['Soccer','Sporting Life'],
-                    views: '1.5k'
+                    Username: 'Username Test 1',
+                    Password: 'test 1',
+                    Notes: {
+                        Title: 'groceries',
+                        Contents: 'apples, bananas, oranges'
+                    }
+                },
+                {
+                    Username: 'Username Test 2',
+                    Password: 'test 2',
+                    Notes: {
+                        Title: 'dances',
+                        Contents: 'jive, bananas, oranges'
+                    }
+                },
+                {
+                    Username: 'Username Test 3',
+                    Password: 'test 2',
+                    Notes: {
+                        Title: 'sports',
+                        Contents: 'apples, bananas, oranges'
+                    }
                 }
+
             ]
         });
 };

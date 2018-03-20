@@ -10,22 +10,21 @@ block content
   .row
     .col-xs-12.col-sm-8
       .row.list-group
-        each note in storednotes
+        each note in noteCollection
 
           .col-xs-12.list-group-item
             h4
-              a(href="/newnote")= note.title
+              a(href="/newnote")= note.Username
               small &nbsp;
-
-
-              span.badge.pull-right.badge-default= note.views + ' views'
-            p.preview= note.text.substr(1,100) +'...'
+              span.badge.pull-right.badge-default= note.Password + " is my password, but don't tell"
+            p.preview= 'Title= '+ note.Notes.Title.substr(0,100)
+            p.contents= 'Contents= ' + note.Notes.Contents
             //p.snippit= note.preview.substr(1,10)+'...'
-            p
-              each tag in note.tags
-                span.label.label-warning=tag
-                &nbsp;
-        a.button.btn.btn-default.pull-right(href="/newnote") Add a New Note
+            //p
+            //  each item in note.Notes.Contents
+            //    span.label.label-warning=item
+            //    &nbsp;
+        //a.button.btn.btn-default.pull-right(href="/newnote") Add a New Note
 
 
 
