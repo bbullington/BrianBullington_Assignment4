@@ -1,0 +1,36 @@
+extends layout
+
+
+block content
+  #banner.page-header
+    .row
+      .col-lg-6
+        h1= pageHeader.title
+          small &nbsp;#{pageHeader.strapline}
+  .row
+    .col-xs-12.col-sm-8
+      .row.list-group
+        each note in storednotes
+
+          .col-xs-12.list-group-item
+            h4
+              a(href="/newnote")= note.title
+              small &nbsp;
+
+
+              span.badge.pull-right.badge-default= note.views + ' views'
+            p.preview= note.text.substr(1,100) +'...'
+            //p.snippit= note.preview.substr(1,10)+'...'
+            p
+              each tag in note.tags
+                span.label.label-warning=tag
+                &nbsp;
+        a.button.btn.btn-default.pull-right(href="/newnote") Add a New Note
+
+
+
+
+    .col-xs-12.col-sm-4
+      p.lead= sidebar
+
+
