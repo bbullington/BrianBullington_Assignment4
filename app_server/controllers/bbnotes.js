@@ -1,8 +1,9 @@
 var request= require('request');
 
 
+var apiBody = 'before';  //temp solution.  Creating a global variable that gets set once getNoteInfo is run
 
-var getNoteInfo = function (req, res, callback){
+var getNoteInfo = function (req, res, callbackTest){
     console.log('getNoteInfo:');
     console.log(getNoteInfo);
     var requestOptions, path;
@@ -15,16 +16,20 @@ var getNoteInfo = function (req, res, callback){
     request(
         requestOptions,
         function(err, response, body){
+            callbackTest(req, res, body);  //<<<<< comment this out, and currently functioning
             //console.log(err, body);
             //res.send(200, "success")
             //[{_id: oiufoj8328j0gv8h2}]
+            //return body;
+            apiBody=body;
+            //console.log(apiBody);
         }
     );
 };
 
-//getNoteInfo();  //runs getNoteInfo() when bbnotes is called. This will be replaced with a callback
+getNoteInfo();  //runs getNoteInfo() when bbnotes is called. This will be replaced with a callback
 //console.log(getNoteInfo);
-//console.log(body);
+//console.log(apiBody);
 
 
 
@@ -35,6 +40,7 @@ var getNoteInfo = function (req, res, callback){
 
 
 /*GET 'home' page */
+
 module.exports.notesListFromApi =function(req,res){
     res.render('notesFromApi.jade',
         {
@@ -43,34 +49,36 @@ module.exports.notesListFromApi =function(req,res){
             pageHeader: {
                 title: 'Your Note Library',
                 strapline: 'Fill the page!'
-            },
-            noteCollection: [
-                {
-                    Username: 'Username Test 1',
-                    Password: 'test 1',
-                    Notes: {
-                        Title: 'groceries',
-                        Contents: 'apples, bananas, oranges'
-                    }
                 },
-                {
-                    Username: 'Username Test 2',
-                    Password: 'test 2',
-                    Notes: {
-                        Title: 'dances',
-                        Contents: 'jive, bananas, oranges'
-                    }
-                },
-                {
-                    Username: 'Username Test 3',
-                    Password: 'test 2',
-                    Notes: {
-                        Title: 'sports',
-                        Contents: 'apples, bananas, oranges'
-                    }
-                }
+            noteCollection: apiBody
 
-            ]
+            //     [
+            //     {
+            //         Username: 'Username Test 1',
+            //         Password: 'test 1',
+            //         Notes: {
+            //             Title: 'groceries',
+            //             Contents: 'apples, bananas, oranges'
+            //         }
+            //     },
+            //     {
+            //         Username: 'Username Test 2',
+            //         Password: 'test 2',
+            //         Notes: {
+            //             Title: 'dances',
+            //             Contents: 'jive, bananas, oranges'
+            //         }
+            //     },
+            //     {
+            //         Username: 'Username Test 3',
+            //         Password: 'test 2',
+            //         Notes: {
+            //             Title: 'sports',
+            //             Contents: 'apples, bananas, oranges'
+            //         }
+            //     }
+            //
+            // ]
         });
 };
 

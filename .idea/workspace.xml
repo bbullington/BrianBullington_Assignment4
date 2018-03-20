@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34a3f6c4-5238-401a-bf64-f7bbddf6e4bf" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app_server/controllers/bbnotes.js" afterPath="$PROJECT_DIR$/app_server/controllers/bbnotes.js" />
-      <change beforePath="$PROJECT_DIR$/app_server/views/notesFromApi.jade" afterPath="$PROJECT_DIR$/app_server/views/notesFromApi.jade" />
+      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,8 +23,8 @@
           <file leaf-file-name="bbnotes.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app_server/controllers/bbnotes.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="659">
-                  <caret line="67" column="38" lean-forward="false" selection-start-line="67" selection-start-column="38" selection-end-line="67" selection-end-column="38" />
+                <state relative-caret-position="187">
+                  <caret line="20" column="38" lean-forward="true" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
                   <folding />
                 </state>
               </provider>
@@ -79,8 +80,8 @@
           <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/package.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="204">
-                  <caret line="12" column="29" lean-forward="false" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+                <state relative-caret-position="272">
+                  <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
                   <folding />
                 </state>
               </provider>
@@ -123,8 +124,8 @@
           <file leaf-file-name="notesFromApi.jade" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app_server/views/notesFromApi.jade">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="323">
-                  <caret line="19" column="64" lean-forward="true" selection-start-line="19" selection-start-column="64" selection-end-line="19" selection-end-column="64" />
+                <state relative-caret-position="476">
+                  <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -190,10 +191,10 @@
         <option value="$PROJECT_DIR$/app_api/Views/layout.jade" />
         <option value="$PROJECT_DIR$/app_api/models/notes.js" />
         <option value="$PROJECT_DIR$/app_api/routes/index.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/app_server/routes/index.js" />
-        <option value="$PROJECT_DIR$/app_server/controllers/bbnotes.js" />
         <option value="$PROJECT_DIR$/app_server/views/notesFromApi.jade" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/app_server/controllers/bbnotes.js" />
       </list>
     </option>
   </component>
@@ -405,12 +406,12 @@
       <workItem from="1520212623418" duration="4689000" />
       <workItem from="1520477581108" duration="22562000" />
       <workItem from="1520708188703" duration="17067000" />
-      <workItem from="1521330975476" duration="28982000" />
+      <workItem from="1521330975476" duration="30450000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75768000" />
+    <option name="totallyTimeSpent" value="77236000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1927" y="-323" width="1512" height="1047" extended-state="0" />
@@ -447,7 +448,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/app_server/controllers/bbnotes.js</url>
-          <line>123</line>
+          <line>131</line>
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="1" />
@@ -751,14 +752,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="29" lean-forward="false" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app_server/views/index.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -775,18 +768,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app_server/controllers/bbnotes.js">
+    <entry file="file://$PROJECT_DIR$/app_server/views/notesFromApi.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="659">
-          <caret line="67" column="38" lean-forward="false" selection-start-line="67" selection-start-column="38" selection-end-line="67" selection-end-column="38" />
+        <state relative-caret-position="204">
+          <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+          <folding>
+            <marker date="1521523231626" expanded="true" signature="22:784" ph="..." />
+            <marker date="1521523231626" expanded="true" signature="159:784" ph="..." />
+            <marker date="1521523231626" expanded="true" signature="174:784" ph="..." />
+            <marker date="1521523231626" expanded="true" signature="194:784" ph="..." />
+            <marker date="1521523231626" expanded="true" signature="788:871" ph="..." />
+            <marker date="1521523231626" expanded="true" signature="801:871" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app_server/views/notesFromApi.jade">
+    <entry file="file://$PROJECT_DIR$/app_server/controllers/bbnotes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="64" lean-forward="true" selection-start-line="19" selection-start-column="64" selection-end-line="19" selection-end-column="64" />
+        <state relative-caret-position="187">
+          <caret line="20" column="38" lean-forward="true" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
           <folding />
         </state>
       </provider>
