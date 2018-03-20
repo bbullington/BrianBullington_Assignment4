@@ -18,18 +18,47 @@ Note: html requests to '/api' come here as '/'
 
 
 router.route('/')
-    .get(function(req, res, next){
-        MongoClient.connect(url, function(err, db) {
-            if (err) throw err;
-            var dbo = db.db("noteDb");
-            dbo.collection("noteCollection").findOne({}, function(err, result) {
-                if (err) throw err;
-                res.send(result);
-                db.close();
+    // .get(function(req, res, next){
+    //     MongoClient.connect(url, function(err, db) {
+    //         if (err) throw err;
+    //         var dbo = db.db("noteDb");
+    //         dbo.collection("noteCollection").findOne({}, function(err, result) {
+    //             if (err) throw err;
+    //             res.send(result);
+    //             db.close();
+    //         });
+    //     });
+    // })
+//
+//
+        .get(function(req, res, next){          //works, but returns array
+        MongoClient.connect(url, function(err, db){
+           if(err) throw err;
+           var dbo=db.db("noteDb");
+           dbo.collection("noteCollection").find({}).toArray(function(err, result){
+               if(err) throw err;
+               console.log(result);
+               res.send(result);
+               db.close();
            });
 
         });
     })
+
+    // .get(function(req, res, next){
+    //     MongoClient.connect(url, function(err, db){
+    //         if(err) throw err;
+    //         var dbo=db.db("noteDb");
+    //         dbo.collection("noteCollection").find({},function(err, result){
+    //             if(err) throw err;
+    //             console.log(result);
+    //             res.send(result);
+    //             db.close();
+    //         });
+    //
+    //     });
+    // })
+
 
 
 
