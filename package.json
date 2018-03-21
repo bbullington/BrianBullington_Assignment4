@@ -19,7 +19,7 @@
     "serve-favicon": "~2.4.5",
     "mongodb": "~3.0.2",
     "mongoose": "~5.0.5",
-    "request": "~2.85.0"
-    "callback":"^0.0.1"
+    "request": "~2.85.0",
+    "callback": "^0.0.1"
   }
 }

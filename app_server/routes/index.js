@@ -11,6 +11,8 @@ var ctrlBbNotesLogin = require('../controllers/bbnotesLogin.js') //used for logi
 router.get('/notes', ctrlBbnotes.notesList);   //currently at old/notes
 router.get('/newnote', ctrlBbnotes.newnote);
 router.get('/notesFromApi', ctrlBbnotes.notesListFromApi); //calls new
+router.get('/notesFromApi2', ctrlBbnotes.noteListFromApiRender); //calls new
+
 
 /*Login Page */     //routes to controllers/bbnotesLogin.js when URL comes in
 router.get('/', ctrlBbNotesLogin.login);
